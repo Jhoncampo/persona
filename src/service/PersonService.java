@@ -7,7 +7,7 @@ import models.Person;
 
 public class PersonService {
     public static List<Person> people = new LinkedList<>();
-
+    
     public void create(Person person) {
         if (person.getGender() == 'M'|| person.getGender() == 'F') {
             people.add(person);
@@ -70,6 +70,26 @@ public class PersonService {
         }
         return sum / people.size();
 
+    }
+
+    public int peopleWithGenderM() {
+        int count = 0;
+        for (Person person : people) {
+            if (person.getGender() == 'M') {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int peopleWithGenderF() {
+        int count = 0;
+        for (Person person : people) {
+            if (person.getGender() == 'F') {
+                count++;
+            }
+        }
+        return count;
     }
 
 }
