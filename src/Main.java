@@ -13,8 +13,6 @@ public class Main {
         EmployeService employeService = new EmployeService();
         Scanner scanner = new Scanner(System.in);
 
-        Employe employe1 = new Employe("John", "Doe", 'M', 30, "Manager");
-        System.out.println("Employe information: " + employe1);
 
         System.out.println("What type of person do you want to add?");
         System.out.println("1. Person");
@@ -52,7 +50,11 @@ public class Main {
                     }
 
                 }
+                // Update person with id 1
+                Person personToUpdate = new Person("Jhon Eduard", "Campo", 'M', 99);
+                personService.update(1, personToUpdate);
 
+                
                 System.out.println("Showing all people");
                 List<Person> allPeople = personService.findAll();
                 for (Person person : allPeople) {
