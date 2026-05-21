@@ -5,10 +5,10 @@ public class Person {
     private int id;
     private String name;
     private String lastName;
-    private String gender;
+    private char gender;
     private int age;
 
-    public Person(String name, String lastName, String gender, int age) {
+    public Person(String name, String lastName, char gender, int age) {
         this.id = idCounter++;
         this.name = name;
         this.lastName = lastName;
@@ -24,7 +24,7 @@ public class Person {
         return name;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -32,23 +32,28 @@ public class Person {
         return lastName;
     }
 
-    public void setLastName(String lastName){
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    public String getGender() {
+    public char getGender() {
         return gender;
     }
 
-    public void setGender(String gender){
-        this.gender = gender;
+    public void setGender(char gender) {
+        if (gender == 'M' || gender == 'F') {
+
+            this.gender = gender;
+        } else {
+            throw new IllegalArgumentException("Invalid gender");
+        }
     }
 
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age){
+    public void setAge(int age) {
         this.age = age;
     }
 
